@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        >
+
+        <TextView
+            android:visibility="visible"
+            android:id="@+id/bolt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="●"
+            />
+        <TextView
+            android:id="@+id/title_article_text_view"
+            android:layout_toRightOf="@+id/bolt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="Why, exactly, would anyone want to use AI to decide whether I’m gay or straight? | Matthew Todd"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#605F5F"
+            android:fontFamily="monospace"
+            />
+
+        <TextView
+            android:id="@+id/author_article_text_view"
+            android:layout_toRightOf="@+id/bolt"
+            android:layout_below="@id/title_article_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="By Mohammad"
+            android:textSize="16sp"
+            android:fontFamily="serif-monospace"
+            android:textColor="#747374"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/date_article_text_view"
+            android:layout_toRightOf="@+id/bolt"
+            android:layout_below="@id/author_article_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="2017 - 12 - 31"
+            android:textSize="14sp"
+            android:fontFamily="serif-monospace"
+            android:textColor="#747374"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/section_article_text_view"
+            android:layout_below="@id/author_article_text_view"
+            android:layout_toRightOf="@+id/date_article_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="| Technology"
+            android:textSize="14sp"
+            android:textColor="#747374"
+            android:fontFamily="serif-monospace"
+            android:textStyle="bold"
+            />
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>
