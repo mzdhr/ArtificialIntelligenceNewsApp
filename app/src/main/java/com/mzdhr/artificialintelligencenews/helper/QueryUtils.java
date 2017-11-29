@@ -87,7 +87,7 @@ public class QueryUtils {
                 line = reader.readLine();
             }
         }
-        Log.d(TAG, "readFromStream: " + output.toString());
+
         return output.toString();
     }
 
