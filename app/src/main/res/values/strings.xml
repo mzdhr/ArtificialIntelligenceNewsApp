@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Artificial Intelligence - News</string>
+    <string name="api"><![CDATA[https://content.guardianapis.com/search?q=artificialintelligenceai&show-tags=contributor&api-key=42684dad-c1f8-4d02-8d95-f2f4cedb3055]]></string>
 </resources>

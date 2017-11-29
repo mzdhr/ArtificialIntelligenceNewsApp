@@ -39,16 +39,21 @@ public class ArticleAdapter extends ArrayAdapter<Article> {
         }
 
         final Article currentArticle = getItem(position);
+        TextView titleTextView = (TextView) listItemView.findViewById(R.id.title_article_text_view);
+        TextView authorTextView = (TextView) listItemView.findViewById(R.id.author_article_text_view);
+        TextView dateTextView = (TextView) listItemView.findViewById(R.id.date_article_text_view);
+        TextView sectionTextView = (TextView) listItemView.findViewById(R.id.section_article_text_view);
 
-        // getting views and setting values into them
-        TextView titleTextView = listItemView.findViewById(R.id.title_article_text_view);
         titleTextView.setText(currentArticle.getTitle());
+        authorTextView.setText(currentArticle.getAuthor());
+        dateTextView.setText(currentArticle.getDate());
+        sectionTextView.setText(currentArticle.getSection());
 
         // setting on click listener to open the clicked article item in the browser
         listItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "You click -> " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "You click -> " + currentArticle.getLink(), Toast.LENGTH_SHORT).show();
             }
         });
 
