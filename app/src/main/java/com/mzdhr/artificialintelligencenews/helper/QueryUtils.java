@@ -106,7 +106,7 @@ public class QueryUtils {
                             results[] ->
                                          article data, tags[]
              */
-        try {// TODO: 11/29/17 no internet it will crash here! handel if intenrt is available then use this method
+        try {
             JSONObject baseJsonResponse = new JSONObject(articleJSON);
             JSONObject responseJsonObject = baseJsonResponse.getJSONObject("response");
             JSONArray resultsArray = responseJsonObject.getJSONArray("results");
