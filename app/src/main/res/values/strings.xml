@@ -2,4 +2,36 @@
     <string name="app_name">Artificial Intelligence - News</string>
     <string name="no_article_found">No Article Found \nPull down to refresh!</string>
     <string name="no_internet_connection">No Internet Connection \nPull down to refresh!</string>
+
+    <!--My Settings-->
+
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">Artificial Intelligence - Settings</string>
+    <!--Settings -> Select Article Section-->
+    <!--Default Value for the Array-->
+    <string name="settings_section_by_default" translatable="false">@string/settings_section_by_all</string>
+    <string name="settings_section_by_all" translatable="false">all</string>
+    <!--Array Label-->
+    <string name="settings_section_by_all_label">ALL Section</string>
+    <string name="settings_section_by_education_label">Education Articles</string>
+    <string name="settings_section_by_science_label">Science Articles</string>
+    <string name="settings_section_by_technology_label">Technology Articles</string>
+    <!--Array Values, false so translators ignore it-->
+    <string name="settings_section_by_all_value" translatable="false">all</string>
+    <string name="settings_section_by_education_value" translatable="false">education</string>
+    <string name="settings_section_by_science_value" translatable="false">science</string>
+    <string name="settings_section_by_technology_value" translatable="false">technology</string>
+    <!-- Setting Title -->
+    <string name="settings_section_by_label">Select Article Section</string>
+    <!-- Setting Key -->
+    <string name="settings_section_by_key" translatable="false">section</string>
+
+    <!--Settings -> Article Numbers-->
+    <!-- Title -->
+    <string name="settings_article_number_label">Select Article Number</string>
+    <!-- Key -->
+    <string name="settings_article_number_key" translatable="false">article_number</string>
+    <!-- Default Value -->
+    <string name="setting_article_number_default" translatable="false">@string/article_number</string>
+    <string name="article_number" translatable="false">10</string>
 </resources>

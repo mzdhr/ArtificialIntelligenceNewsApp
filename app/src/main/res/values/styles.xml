@@ -10,15 +10,17 @@
         <!--change actionbar text color-->
         <item name="titleTextColor">#605F5F</item>
 
-        <!--actionbar icon color-->
-        <item name="colorControlNormal">#605F5F</item>
-
         <!--making actionbar neat-->
         <item name="actionBarSize">48dip</item>
         <item name="android:actionBarSize">48dp</item>
-
+        <!--making actionbar icon black-->
+        <item name="actionBarTheme">@style/MyApp.ActionBarTheme</item>
     </style>
 
+    <!-- where can color the arrow and the rest of icons-->
+    <style name="MyApp.ActionBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">#000000</item>
+    </style>
 
 
 </resources>

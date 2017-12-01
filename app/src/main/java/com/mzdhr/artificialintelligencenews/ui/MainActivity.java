@@ -1,9 +1,13 @@
 package com.mzdhr.artificialintelligencenews.ui;
 
 import android.app.LoaderManager;
+import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +16,8 @@ import com.mzdhr.artificialintelligencenews.adapter.ArticleAdapter;
 import com.mzdhr.artificialintelligencenews.loader.ArticleLoader;
 import com.mzdhr.artificialintelligencenews.model.Article;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -126,7 +132,32 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     // --------------
     @Override
     public Loader<ArrayList<Article>> onCreateLoader(int id, Bundle args) {
-        return new ArticleLoader(this, RAW_API_URL);
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        // Building the API Query with Settings
+        // There are two Settings -> select article section, and select article number.
+        String selectSection = sharedPrefs.getString(
+                getString(R.string.settings_section_by_key),
+                getString(R.string.settings_section_by_default)
+        );
+
+        String articleNumber = sharedPrefs.getString(
+                getString(R.string.settings_article_number_key),
+                getString(R.string.setting_article_number_default)
+        );
+
+        Uri baseUri = Uri.parse(RAW_API_URL);
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+
+        // "all" is default value to show all articles in all sections.
+        // But the api does not support this value "all", so I used this way to jump it.
+        if (!selectSection.equals("all")){
+            uriBuilder.appendQueryParameter("section", selectSection);
+        }
+        // "page-size" is supported with all its values, default is 10.
+        uriBuilder.appendQueryParameter("page-size", articleNumber);
+
+        return new ArticleLoader(this, uriBuilder.toString());
     }
 
     @Override
@@ -156,4 +187,23 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
 
+    // --------------
+    // Menu Setting Section
+    // --------------
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(settingsIntent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
