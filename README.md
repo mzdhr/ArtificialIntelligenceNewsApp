@@ -1,5 +1,5 @@
 # Artificial Intelligence News App
-Android App to display news from the Theguardian.com API under AI category. It was Udacity basic nanodegree Android project number 06 and 07 (adding setting).
+Android app to display news from the Theguardian.com API under AI category. It was Udacity basic nanodegree Android project number 06 and 07 (adding setting).
 
 ## Built With
 * ListView, ArrayAdapter, Handling API calls manual, OOP.
